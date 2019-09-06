@@ -1,7 +1,11 @@
-version: "3.6"
+version: "3.7"
 
 services:
-  redis:
-    image: "redis:4.0.9"
+  app:
+    build: .
+    environment:
+      REDIS_URL: redis:6379
     ports:
-      - "6379:6379"
+      - 8080:8080
+  redis:
+    image: redis:5.0.7

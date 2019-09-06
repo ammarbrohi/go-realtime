@@ -1,26 +1,10 @@
 <template>
-  <div>
-    <div v-if="$apollo.loading">Loading...</div>
-
-    <pre>{{JSON.stringify(users, 2, ' ')}}</pre>
+  <div class="container">
+    <h1 class="mt-5 mb-4">GraphQL Chat</h1>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import gql from 'graphql-tag';
-
-export default {
-  data() {
-    return {
-      users: [],
-    };
-  },
-  apollo: {
-    users: gql`
-      {
-        users
-      }
-    `,
-  },
-};
+export default {};
 </script>
